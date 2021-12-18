@@ -14,6 +14,11 @@
         var socket = io();
         socket.on('connect', function(){ console.log("conectado con el servidor __ ")});
         socket.on('disconnect', function(){ console.log("perdimos coneccion con el servidor __ ")});
+
+        socket.emit('mesaje', {nombre:"Alejandro"});
+        socket.on('mensaje',function( payload ){
+            console.log('Escuchando...', payload);
+        });
     </script>
     
 </body>
